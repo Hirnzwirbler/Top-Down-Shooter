@@ -1,17 +1,16 @@
-extends RigidBody2D
-
-export (int) var BULLET_SPEED = 750
+extends Area2D
 
 onready var timer = $Timer
+onready var muzzle = $Muzzle
 
-func _ready():
-	timer.start()
+var CannonBall = preload("res://Cannon_Ball.tscn")
 
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("mobs"):
-		body.queue_free()
-	queue_free()
-
-
-func _on_Timer_timeout():
-	queue_free()
+func shoot(rotation):
+	if timer.time_left == 0:
+		var cannonBall = CannonBall.instance()
+		cannonBall.position = muzzle.global_position
+		cannonBall.rotation_degrees = rotation_degrees
+		cannonBall.apply_impulse(Vector2(), Vector2(cannonBall.BULLET_SPEED,0).rotated(rotation))
+		print(rotation)
+		get_tree().get_root().call_deferred("add_child", cannonBall)
+		timer.start()

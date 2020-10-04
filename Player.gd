@@ -7,10 +7,8 @@ export (int) var MAX_SPEED = 300
 export (float) var ACCELERATION = 0.1
 export (float) var FRICTION = 0.05
 
-onready var muzzle1 = $Muzzle
-onready var muzzle2 = $Muzzle2
-onready var gun_timer1 = $GunTimer1
-onready var gun_timer2 = $GunTimer2
+onready var gun1 = $Sprite/Cannon
+onready var gun2 = $Sprite/Cannon2
 
 var velocity = Vector2()
 
@@ -25,12 +23,8 @@ func get_input():
 		shoot()
 
 func shoot():
-	if gun_timer1.time_left == 0:
-		shoot_bullet(muzzle1)
-		gun_timer1.start()
-	if gun_timer2.time_left == 0:
-		shoot_cannon(muzzle2)
-		gun_timer2.start()
+	gun1.shoot(rotation)
+	gun2.shoot(rotation)
 	
 func shoot_bullet(muzzle_num):
 	var bullet = Bullet.instance()
@@ -39,12 +33,6 @@ func shoot_bullet(muzzle_num):
 	bullet.apply_impulse(Vector2(), Vector2(bullet.BULLET_SPEED,0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child", bullet)
 	
-func shoot_cannon(muzzle_num):
-	var cannon = Cannon.instance()
-	cannon.position = muzzle_num.global_position
-	cannon.rotation_degrees = rotation_degrees
-	cannon.apply_impulse(Vector2(), Vector2(cannon.BULLET_SPEED,0).rotated(rotation))
-	get_tree().get_root().call_deferred("add_child", cannon)
 
 func move(delta):
 	velocity = velocity.normalized() * MAX_SPEED
