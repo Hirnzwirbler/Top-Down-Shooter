@@ -11,6 +11,5 @@ func shoot(rotation):
 		cannonBall.position = muzzle.global_position
 		cannonBall.rotation_degrees = rotation_degrees
 		cannonBall.apply_impulse(Vector2(), Vector2(cannonBall.BULLET_SPEED,0).rotated(rotation))
-		print(rotation)
 		get_tree().get_root().call_deferred("add_child", cannonBall)
 		timer.start()

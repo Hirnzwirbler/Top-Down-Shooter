@@ -13,10 +13,10 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
 [node name="Cannon" parent="Sprite" instance=ExtResource( 3 )]
-position = Vector2( -2.375, -13 )
+position = Vector2( -2.375, -12 )
 
 [node name="Cannon2" parent="Sprite" instance=ExtResource( 3 )]
-position = Vector2( -1.375, 13 )
+position = Vector2( -2.375, 12 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -8.75, -25, -0.75, -25, -0.75, -16, 24.25, -2, 24.25, 2, -0.75, 16, -0.75, 25, -8.75, 25, -8.75, 16, -17.75, 3, -17.75, -3, -8.75, -16 )
