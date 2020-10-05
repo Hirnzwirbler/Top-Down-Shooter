@@ -1,16 +1,14 @@
 extends KinematicBody2D
 
-var Bullet = preload("res://Bullet.tscn")
-var Cannon = preload("res://Cannon.tscn")
-
 export (int) var MAX_SPEED = 300
 export (float) var ACCELERATION = 0.1
 export (float) var FRICTION = 0.05
 
-onready var gun1 = $Sprite/Cannon
-onready var gun2 = $Sprite/Cannon2
-
 var velocity = Vector2()
+var guns = []
+
+func _ready():
+	guns = get_child(0).get_children()
 
 func get_input():
 	look_at(get_global_mouse_position())
@@ -23,15 +21,8 @@ func get_input():
 		shoot()
 
 func shoot():
-	gun1.shoot(rotation)
-	gun2.shoot(rotation)
-	
-func shoot_bullet(muzzle_num):
-	var bullet = Bullet.instance()
-	bullet.position = muzzle_num.global_position
-	bullet.rotation_degrees = rotation_degrees
-	bullet.apply_impulse(Vector2(), Vector2(bullet.BULLET_SPEED,0).rotated(rotation))
-	get_tree().get_root().call_deferred("add_child", bullet)
+	for gun in guns:
+		gun.shoot(rotation)
 	
 
 func move(delta):
