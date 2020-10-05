@@ -3,7 +3,7 @@ extends Area2D
 onready var timer = $Timer
 onready var muzzle = $Muzzle
 
-var CannonBall = preload("res://Cannon_Ball.tscn")
+var CannonBall = preload("res://Guns/Cannon_Ball.tscn")
 
 func shoot(rotation):
 	if timer.time_left == 0:

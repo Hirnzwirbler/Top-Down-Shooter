@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Mech_Top_Down_32_32.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://Cannon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GatlingGun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Mech_Top_Down_32_32.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Guns/Cannon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Guns/GatlingGun.tscn" type="PackedScene" id=4]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 87.75, 87 )

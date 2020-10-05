@@ -8,7 +8,8 @@ var velocity = Vector2()
 var guns = []
 
 func _ready():
-	guns = get_child(0).get_children()
+	if get_child(0).get_children().size() != 0:
+		guns = get_child(0).get_children()
 
 func get_input():
 	look_at(get_global_mouse_position())
@@ -24,7 +25,6 @@ func shoot():
 	for gun in guns:
 		gun.shoot(rotation)
 	
-
 func move(delta):
 	velocity = velocity.normalized() * MAX_SPEED
 	if velocity.length() > 0:

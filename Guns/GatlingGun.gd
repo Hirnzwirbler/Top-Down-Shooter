@@ -7,7 +7,7 @@ onready var muzzle3 = $Muzzle3
 
 var muzzles = []
 
-var Bullet = preload("res://Bullet.tscn")
+var Bullet = preload("res://Guns/Bullet.tscn")
 
 func _ready():
 	muzzles.append(muzzle1)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cannon_32_32.png-9c1031eba85155a9dee19c169da5cc82.stex"
+path="res://.import/Mech_Top_Down_32_32.png-8084a72f8db16b9e4b6257456326123c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cannon_32_32.png"
-dest_files=[ "res://.import/Cannon_32_32.png-9c1031eba85155a9dee19c169da5cc82.stex" ]
+source_file="res://Player/Mech_Top_Down_32_32.png"
+dest_files=[ "res://.import/Mech_Top_Down_32_32.png-8084a72f8db16b9e4b6257456326123c.stex" ]
 
 [params]
 

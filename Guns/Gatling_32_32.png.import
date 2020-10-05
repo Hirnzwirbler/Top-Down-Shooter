@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gatling_32_32.png-663c172a91c9a362711a2747849c580e.stex"
+path="res://.import/Gatling_32_32.png-3f7b0b66f71a05d663b54234eb804193.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gatling_32_32.png"
-dest_files=[ "res://.import/Gatling_32_32.png-663c172a91c9a362711a2747849c580e.stex" ]
+source_file="res://Guns/Gatling_32_32.png"
+dest_files=[ "res://.import/Gatling_32_32.png-3f7b0b66f71a05d663b54234eb804193.stex" ]
 
 [params]
 
