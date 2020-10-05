@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 export (int) var BULLET_SPEED = 1000
+export (int) var DAMAGE = 1
 
 onready var timer = $Timer
 
